@@ -1,0 +1,12 @@
+{
+  "name": "eth-rate-normalizer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "normalizing rate of ETH different units per time different units",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Javad Khalilian <khalilian.javad@gmail.com>",
+  "license": "ISC"
+}
