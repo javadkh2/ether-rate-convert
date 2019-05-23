@@ -43,6 +43,11 @@ Now the project is ready for run. by below command you can run it locally
 ```
 npm start
 ```
+For run test use this command
+```
+npm test
+```
+
 #
 ### Using docker
 There a *docker-compose.yml* file in the root of project.
