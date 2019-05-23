@@ -29,23 +29,23 @@ export function parseRateRequest(request: string): IRateRequest | null {
 export function getErrors(rateRequest: IRateRequest | null) {
     const message: string[] = [];
     if (!rateRequest) {
-        message.push("invalid request format, you must send your request as /?rate=<number> <ETHUnit> / <timeUnit>");
+        message.push("INVALID_FORMAT: Invalid request format, you must send your request as /?rate=<number> <ETHUnit> / <timeUnit>");
     } else {
         if (Number.isNaN(rateRequest.rate)) {
-            message.push("you must enter a valid number for rate");
+            message.push("INVALID_RATE: You must enter a valid number for rate");
         }
         if (!ethUnitsConvertor(rateRequest.etherUnit)) {
-            message.push("you must choose ether unit in [ether,milliether,microether,gwei,mwei,kwei,wei]");
+            message.push("INVALID_ETHER_UNIT: You must choose ether unit in [ether,milliether,microether,gwei,mwei,kwei,wei]");
         }
 
         if (!timeUnitsConvertor(rateRequest.timeUnit)) {
-            message.push("you must choose time unit in [day,hour,minute,second]");
+            message.push("INVALID_TIME_UNIT: You must choose time unit in [day,hour,minute,second]");
         }
     }
     if (!message.length) {
         return null;
     } else {
-        return `error(s) in processing your request: \n ${message.join("\n")}`;
+        return `Error(s) in processing your request: \n ${message.join(".\n")}`;
     }
 }
 
