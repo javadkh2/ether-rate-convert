@@ -1,6 +1,6 @@
 ## ETH Rate Convertor
 
-this service is designed for normalizing rate of ether (different units) per time (different units) to wei/hour.
+This service is designed for normalizing rate of ether (different units) per time (different units) to wei/hour.
 It received rate as query string in the following format
 ```
 GET /eth-rate-convert?<number> <ETHUnit> / <timeUnit>
@@ -14,7 +14,7 @@ The valid Ether units are
 * Kwei
 * Wei
 
-valid Time units are
+The valid Time units are
 * Second
 * Minute
 * Hour
@@ -27,7 +27,7 @@ Result is the following format
 
 #
 ### Installation
-the project is prepared for deploy on heroku but it also consist of *docker-compose* file, for clone and start the project manually use the following steps,
+The project is prepared for deploy on heroku but it also consist of *docker-compose* file, for clone and start the project manually use the following steps,
 ```
 git clone https://github.com/javadkh2/ether-rate-convert.git
 ```
@@ -39,7 +39,7 @@ Now you must install dependencies with the following command
 ```
 npm install
 ```
-now the project is ready for run. by below command you can run it locally
+Now the project is ready for run. by below command you can run it locally
 ```
 npm start
 ```
@@ -60,7 +60,7 @@ services:
       - ./:/app  
 ```
 
-for running it use the following command
+For running it use the following command
 ```
 docker-compose up
 ```
