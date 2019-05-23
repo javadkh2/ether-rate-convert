@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "description": "normalizing rate of ETH different units per time different units",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev" : "tsc -w"
   },
   "author": "Javad Khalilian <khalilian.javad@gmail.com>",
   "license": "ISC",
@@ -13,7 +14,10 @@
     "express": "^4.17.0"
   },
   "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.13",
     "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
   }

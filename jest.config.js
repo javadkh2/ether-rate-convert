@@ -42,13 +42,10 @@ module.exports = {
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
 
-  // A path to a custom dependency extractor
-  // dependencyExtractor: null,
-
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,
 
-  // Force coverage collection from ignored files using an array of glob patterns
+  // Force coverage collection from ignored files usin a array of glob patterns
   // forceCoverageMatch: [],
 
   // A path to a module which exports an async function that is triggered once before all test suites
@@ -58,7 +55,11 @@ module.exports = {
   // globalTeardown: null,
 
   // A set of global variables that need to be available in all test environments
-  // globals: {},
+  globals: {
+    "ts-jest": {
+      "tsConfigFile": "tsconfig.json"
+    }
+  },
 
   // An array of directory names to be searched recursively up from the requiring module's location
   // moduleDirectories: [
@@ -66,14 +67,10 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "json",
-  //   "jsx",
-  //   "ts",
-  //   "tsx",
-  //   "node"
-  // ],
+  moduleFileExtensions: [
+    "ts",
+    "js"
+  ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -138,10 +135,9 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    "**/__tests__/**.+(ts|js)"
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -164,7 +160,9 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: null,
+  transform: {
+    "^.+\\.(ts)$": "ts-jest"
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
