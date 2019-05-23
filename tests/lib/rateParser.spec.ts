@@ -1,4 +1,7 @@
-import { getErrors, parseRateRequest, getNormalRate, IRateRequest } from "../../src/lib/rateParser";
+/**
+ * test file for parseRateRequest module;
+ */
+import { getErrors, getNormalRate, IRateRequest, parseRateRequest } from "../../src/lib/rateParser";
 
 describe("test parseRateRequest functionality", () => {
     it("should return an RateRequest object if the request match by pattern", () => {

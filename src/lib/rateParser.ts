@@ -1,6 +1,6 @@
 import { ethUnitsConvertor } from "./ethUnitsConvertor";
-import { ignoreWhiteSpaces } from "./utils";
 import { timeUnitsConvertor } from "./timeUnitsConvertor";
+import { ignoreWhiteSpaces } from "./utils";
 
 export interface IRateRequest {
     etherUnit: string;
@@ -8,6 +8,8 @@ export interface IRateRequest {
     timeUnit: string;
 }
 
+// parse a request string and return a json with IRateRequest structure;
+// if the string has not valid format return null
 export function parseRateRequest(request: string): IRateRequest | null {
     const matcher = /([\d\.\s]+)([^\/\\]+)[\/\\](.+)/;
     const groups = (request || "").match(matcher);
@@ -23,6 +25,7 @@ export function parseRateRequest(request: string): IRateRequest | null {
     }
 }
 
+// check a rateRequest for different errors
 export function getErrors(rateRequest: IRateRequest | null) {
     const message: string[] = [];
     if (!rateRequest) {
@@ -46,6 +49,7 @@ export function getErrors(rateRequest: IRateRequest | null) {
     }
 }
 
+// return normal result in wei/hour unit
 export function getNormalRate(rateRequest: IRateRequest) {
     const etherUnitConvertor = ethUnitsConvertor(rateRequest.etherUnit);
     const timeUnitConvertor = timeUnitsConvertor(rateRequest.timeUnit);
