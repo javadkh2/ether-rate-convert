@@ -30,3 +30,7 @@ export const trampoline = (fn: any) => (...args: any[]) => {
 export type convertorType = (amount: number) => number;
 export type convertorToBaseType = (ratio: number) => convertorType;
 export const convertToBase: convertorToBaseType = curry((ratio: number, amount: number) => ratio * amount);
+
+export const replace = (replaceValue: string) => (regex: RegExp) => (str: string) => str.replace(regex, replaceValue);
+export const removeMatches = replace("");
+export const ignoreWhiteSpaces = removeMatches(/\s/ig);
