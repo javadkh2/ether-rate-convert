@@ -1,3 +1,3 @@
 ## ETH Rate Convertor
 
-this service will be designed for normalizing rate of ETH different units per time different units.
+this service is designed for normalizing rate of ether (different units) per time (different units).
