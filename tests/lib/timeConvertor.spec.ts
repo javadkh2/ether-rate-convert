@@ -2,7 +2,7 @@
  * etcConvertor test file
  */
 
-import { convertorType } from "../../src/lib/FP";
+import { convertorType } from "../../src/lib/utils";
 import { timeUnitsConvertor } from "../../src/lib/timeUnitsConvertor";
 
 describe("testing time convertor functionality", () => {

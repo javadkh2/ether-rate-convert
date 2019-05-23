@@ -1,4 +1,4 @@
-import { convertToBase } from "./FP";
+import { convertToBase } from "./utils";
 
 export const dayToHour = convertToBase(24);
 export const hourToHour = convertToBase(1);

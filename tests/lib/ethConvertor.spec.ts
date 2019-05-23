@@ -3,7 +3,7 @@
  */
 
 import { ethUnitsConvertor } from "../../src/lib/ethUnitsConvertor";
-import { convertorType } from "../../src/lib/FP";
+import { convertorType } from "../../src/lib/utils";
 
 describe("testing eth convertor functionality", () => {
     [

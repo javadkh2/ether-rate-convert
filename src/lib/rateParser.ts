@@ -1,5 +1,5 @@
 import { ethUnitsConvertor } from "./ethUnitsConvertor";
-import { ignoreWhiteSpaces } from "./FP";
+import { ignoreWhiteSpaces } from "./utils";
 import { timeUnitsConvertor } from "./timeUnitsConvertor";
 
 export interface IRateRequest {

@@ -1,4 +1,4 @@
-import { convertToBase } from "./FP";
+import { convertToBase } from "./utils";
 
 export const etherToWei = convertToBase(1000000000000000000);
 export const millietherToWei = convertToBase(1000000000000000);
