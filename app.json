@@ -1,0 +1,8 @@
+{
+  "name": "ether-rate-convert",
+  "description": "normalizing rate of ETH different units per time different units",
+  "repository": "https://github.com/javadkh2/ether-rate-convert.git",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
