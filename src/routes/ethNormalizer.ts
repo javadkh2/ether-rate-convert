@@ -16,7 +16,7 @@ router.get("/", function ethNormalizer(req: Request, res: Response, next: NextFu
         res.status(400);
         res.json({ error });
     } else {
-        res.json({ rate: getNormalRate(rateRequest as IRateRequest) })
+        res.json({ result: getNormalRate(rateRequest as IRateRequest) })
     }
 });
 
