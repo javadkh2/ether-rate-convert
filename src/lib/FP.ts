@@ -25,3 +25,8 @@ export const trampoline = (fn: any) => (...args: any[]) => {
     }
     return result();
 };
+
+// a function for convert input to base type with special ratio;
+export type convertorType = (amount: number) => number;
+export type convertorToBaseType = (ratio: number) => convertorType;
+export const convertToBase: convertorToBaseType = curry((ratio: number, amount: number) => ratio * amount);

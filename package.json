@@ -6,7 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "dev" : "tsc -w"
+    "start" : "tsc -w"
   },
   "author": "Javad Khalilian <khalilian.javad@gmail.com>",
   "license": "ISC",
