@@ -7,6 +7,7 @@ import { convertorType } from "../../src/lib/utils";
 
 describe("testing eth convertor functionality", () => {
     [
+        ["eth", 1000000000000000000],
         ["ether", 1000000000000000000],
         ["milliether", 1000000000000000],
         ["microether", 1000000000000],

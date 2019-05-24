@@ -31,6 +31,11 @@ describe("test parseRateRequest functionality", () => {
         const rateRequest = parseRateRequest(request);
         expect(rateRequest).toBeNull();
     });
+
+    it("should return null if the request is an empty string", () => {
+        const rateRequest = parseRateRequest("");
+        expect(rateRequest).toBeNull();
+    });
 });
 
 describe("test getErrors functionality", () => {
@@ -75,5 +80,11 @@ describe("test getNormalRate functionality", () => {
         const rateRequest = parseRateRequest("0.1 Ether / day") as IRateRequest;
         const rate = getNormalRate(rateRequest);
         expect(rate).toBe(result);
+    });
+
+    it("it should return null for invalid request", () => {
+        const rateRequest = parseRateRequest("0.1 Ethers / day") as IRateRequest;
+        const rate = getNormalRate(rateRequest);
+        expect(rate).toBeNull();
     });
 });
