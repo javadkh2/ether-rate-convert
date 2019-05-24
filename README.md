@@ -24,7 +24,10 @@ Result is the following format
 ```
 { "result" : <rate_in_wei_per_hour> }
 ```
-
+In case of errors, the status code will be *400* and the result will be in this format
+```
+{ "error" : <error_message> }
+```
 #
 ### Installation
 The project is prepared for deploy on heroku but it also consist of *docker-compose* file, for clone and start the project manually use the following steps,
