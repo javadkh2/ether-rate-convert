@@ -47,7 +47,11 @@ For run test use this command
 ```
 npm test
 ```
-
+For run code coverage in test units use this command
+```
+npm run test-coverage
+```
+The result of code coverage will be exist on coverage folder
 #
 ### Using docker
 There a *docker-compose.yml* file in the root of project.
