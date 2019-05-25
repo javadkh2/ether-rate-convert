@@ -76,3 +76,24 @@ For running it use the following command
 ```
 docker-compose up
 ```
+#
+### Using Heroku
+The project is configured for deploying automatically in Heroku cloud. 
+The main files are *app.json* and "Procfile".
+app.json contains the project name on other information.
+```
+{
+  "name": "ether-rate-convert",
+  "description": "normalizing rate of ETH different units per time different units",
+  "repository": "https://github.com/javadkh2/ether-rate-convert.git",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
+```
+Procfile that selects service type and main command for run the service.
+```
+web: node dist/index.js
+```
+For working with Heroku you must create an application in your profile and using Heroku repository or Heroku connection to you github account.
+This project already use Heroku GitHub connection and GitHub hooks. So each time master branch is updated the Heroku pull code and run build and deploy process on the server. the test process in not configured because I use the heroku free plan. so you must care about test before push to master branch.
