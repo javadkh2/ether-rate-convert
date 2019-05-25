@@ -13,3 +13,6 @@ export const replace = (replaceValue: string) => (regex: RegExp) => (str: string
 export const removeMatches = replace("");
 // remove white space form an string;
 export const ignoreWhiteSpaces = removeMatches(/\s/ig);
+
+// return 10 Exponentiation
+export const tenExponentiation = (power: number) => Math.pow(10, power);
