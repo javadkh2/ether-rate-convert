@@ -71,11 +71,29 @@ services:
     volumes:
       - ./:/app  
 ```
-
 For running it use the following command
 ```
 docker-compose up
 ```
+If you want run without compose this command
+```
+docker run -v "./:/app" -p "3000:3000" node:alpine node /app/dist/index.js
+```
+If you want create separate image file you must use Dockerfile like following format
+```
+FROM node:alpine
+ADD ./ /app
+CMD [ "node", "/app/dist/index.js" ]
+```
+Build image with following command
+```
+docker build -t ether-rate-convert:0.1 .
+```
+Run container with following command
+```
+docker run -p "3000:3000" ether-rate-convert:0.1
+```
+
 #
 ### Using Heroku
 The project is configured for deploying automatically in Heroku cloud. 

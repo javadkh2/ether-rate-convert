@@ -3,7 +3,7 @@
  */
 
 import Router, { NextFunction, Request, Response } from "express";
-import { getErrors, getNormalRate, IRateRequest, parseRateRequest } from "../lib/rateParser";
+import { getErrorMessage, getNormalRate, IRateRequest, parseRateRequest, validate } from "../lib/rateParser";
 
 const router = Router();
 
@@ -11,10 +11,10 @@ const router = Router();
 router.get("/", function ethNormalizer(req: Request, res: Response, next: NextFunction) {
     const rate = req.query.rate;
     const rateRequest = parseRateRequest(rate);
-    const error = getErrors(rateRequest);
+    const error = validate(rateRequest);
     if (error) {
         res.status(400);
-        res.json({ error });
+        res.json({ error: getErrorMessage(error) });
     } else {
         res.json({ result: getNormalRate(rateRequest as IRateRequest) });
     }

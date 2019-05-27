@@ -1,3 +1,4 @@
+import { translate } from "../vocabs/dictionary";
 import { ethUnitsConvertor } from "./ethUnitsConvertor";
 import { timeUnitsConvertor } from "./timeUnitsConvertor";
 import { ignoreWhiteSpaces } from "./utils";
@@ -26,28 +27,30 @@ export function parseRateRequest(request: string): IRateRequest | null {
 }
 
 // check a rateRequest for different errors
-export function getErrors(rateRequest: IRateRequest | null) {
-    const message: string[] = [];
+export function validate(rateRequest: IRateRequest | null) {
+    const error: string[] = [];
     if (!rateRequest) {
-        message.push("INVALID_FORMAT: Invalid request format, you must send your request as /?rate=<number> <ETHUnit> / <timeUnit>");
+        error.push("INVALID_FORMAT");
     } else {
         if (Number.isNaN(rateRequest.rate)) {
-            message.push("INVALID_RATE: You must enter a valid number for rate");
+            error.push("INVALID_RATE");
         }
         if (!ethUnitsConvertor(rateRequest.etherUnit)) {
-            message.push("INVALID_ETHER_UNIT: You must choose ether unit in [ether,milliether,microether,gwei,mwei,kwei,wei]");
+            error.push("INVALID_ETHER_UNIT");
         }
 
         if (!timeUnitsConvertor(rateRequest.timeUnit)) {
-            message.push("INVALID_TIME_UNIT: You must choose time unit in [day,hour,minute,second]");
+            error.push("INVALID_TIME_UNIT");
         }
     }
-    if (!message.length) {
+    if (!error.length) {
         return null;
     } else {
-        return `Error(s) in processing your request: \n ${message.join(".\n")}`;
+        return error;
     }
 }
+
+export const getErrorMessage = (errors: string[] | null) => !errors || !errors.length ? "" : ["ERRORS", ...errors].map(translate).join(".\n")
 
 // return normal result in wei/hour unit
 export function getNormalRate(rateRequest: IRateRequest) {

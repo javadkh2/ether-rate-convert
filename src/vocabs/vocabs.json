@@ -1,0 +1,7 @@
+{
+    "INVALID_FORMAT": "INVALID_FORMAT: Invalid request format, you must send your request as /?rate=<number> <ETHUnit> / <timeUnit>",
+    "INVALID_RATE": "INVALID_RATE: You must enter a valid number for rate",
+    "INVALID_ETHER_UNIT": "INVALID_ETHER_UNIT: You must choose ether unit in [ether,milliether,microether,gwei,mwei,kwei,wei]",
+    "INVALID_TIME_UNIT": "INVALID_TIME_UNIT: You must choose time unit in [day,hour,minute,second]",
+    "ERRORS": "Error(s) in processing your request"
+}
